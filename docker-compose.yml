@@ -1,0 +1,10 @@
+version: '2'
+services:
+    left_screen:
+        image: left_image
+        ports:
+            - 6000
+    right_screen:
+        image: right_image
+        ports:
+            - 7000
