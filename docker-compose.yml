@@ -1,17 +1,12 @@
 version: '2'
 services:
     ping_container:
-        image: left_image
+        build:
+            dockerfile: ping/ping_image
         ports:
             - "6000:6000"
-        networks:
-            - ping_pong_network
     pong_container:
-        image: right_image
+        build:
+            dockerfile: pong/pong_image
         ports:
             - "7000:7000"
-        networks:
-            - ping_pong_network
-
-networks:
-    ping_pong_network:

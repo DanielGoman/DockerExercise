@@ -2,10 +2,10 @@ FROM python:3.8-alpine
 
 WORKDIR /DockerExercise
 
-COPY left/left.py requirements.txt ./
+COPY pong/pong.py requirements.txt ./
 
 RUN pip install -r requirements.txt
 
 ENTRYPOINT ["python"]
 
-CMD ["left.py"]
+CMD ["pong.py"]
