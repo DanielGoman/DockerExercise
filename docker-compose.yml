@@ -1,10 +1,17 @@
 version: '2'
 services:
-    left_screen:
+    ping_container:
         image: left_image
         ports:
-            - 6000
-    right_screen:
+            - "6000:6000"
+        networks:
+            - ping_pong_network
+    pong_container:
         image: right_image
         ports:
-            - 7000
+            - "7000:7000"
+        networks:
+            - ping_pong_network
+
+networks:
+    ping_pong_network:
