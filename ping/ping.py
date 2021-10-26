@@ -17,12 +17,11 @@ def do_ping():
         res = requests.get(f'http://localhost:{dest_port}/ping')
         print('-> answered ping')
     except requests.exceptions.RequestException as e:
-        print(e)
+        print('rip')
         return 'ping fail'
 
-    print('pinggggg')
     return 'ping ' + str(res) + '\n'
 
 
 if __name__ == "__main__":
-    app.run('localhost', port=host_port)
+    app.run(host='localhost', port=host_port)

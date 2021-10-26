@@ -25,4 +25,4 @@ def do_ping():
 
 
 if __name__ == "__main__":
-    app.run('localhost', port=host_port)
+    app.run(host='localhost', port=host_port)

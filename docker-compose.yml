@@ -3,10 +3,15 @@ services:
     ping_container:
         build:
             dockerfile: ping/ping_image
-        ports:
-            - "6000:6000"
+        networks:
+            - ping_pong_net
     pong_container:
         build:
             dockerfile: pong/pong_image
-        ports:
-            - "7000:7000"
+        networks:
+            - ping_pong_net
+        depends_on:
+            - ping_container
+
+networks:
+    ping_pong_net:
